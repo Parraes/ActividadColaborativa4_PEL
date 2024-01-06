@@ -38,6 +38,10 @@ public:
         contactos = 0;
     }
 
+    ~Perfil() {
+        // Agregar código del destructor si es necesario
+    }
+
     void agregar_contacto(Contacto contacto) {
         contactos.insertar(contacto);
     }
@@ -51,7 +55,14 @@ public:
     }
 
     void eliminar_contacto(string nombre) {
-        contactos.eliminar(nombre);
+        try {
+            // Intenta llamar al método eliminar de la lista de contactos
+            contactos.eliminar(nombre);
+        } catch (const runtime_error& e) {
+            // En caso de que se lance una excepción (por ejemplo, si el contacto no se encuentra),
+            // captura la excepción y muestra un mensaje de error en la consola
+            cout << "Error al eliminar contacto: " << e.what() << endl;
+        }
     }
 
     void importar_contactos(Perfil& perfil_destino) {

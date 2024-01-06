@@ -41,6 +41,26 @@ public:
 
     void eliminar(string nombre) {
         // Implementar la lógica para eliminar un nodo por nombre en la lista enlazada.
+        Nodo* actual = cabeza;
+        Nodo* anterior = nullptr;
+
+        while (actual != nullptr) {
+            if (actual->dato.nombre == nombre) {
+                if (anterior != nullptr) {
+                    anterior->siguiente = actual->siguiente;
+                    delete actual;
+                } else {
+                    Nodo* temp = actual->siguiente;
+                    delete actual;
+                    cabeza = temp;
+                }
+                return;
+            }
+            anterior = actual;
+            actual = actual->siguiente;
+        }
+
+        throw runtime_error("Contacto no encontrado para eliminar");
     }
 
     void mostrar() {
