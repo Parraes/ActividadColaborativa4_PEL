@@ -68,6 +68,23 @@ public:
     void importar_contactos(Perfil& perfil_destino) {
         // Implementar la lógica para importar contactos y eliminar duplicados
         // entre el perfil actual y el perfil de destino.
+        Nodo* actual = contactos.cabeza;
+
+        while (actual != nullptr) {
+            // Verifica si el contacto ya existe en el perfil de destino
+            Nodo* contactoExistente = perfil_destino.buscar_contacto(actual->dato.nombre);
+
+            if (contactoExistente == nullptr) {
+                // Si el contacto no existe en el perfil de destino, agrégalo
+                perfil_destino.agregar_contacto(actual->dato);
+            } else {
+                // Si el contacto ya existe en el perfil de destino, podrías querer
+                // realizar alguna acción específica, como fusionar la información o ignorar el duplicado
+                cout << "Contacto '" << actual->dato.nombre << "' ya existe en el perfil de destino." << endl;
+            }
+
+            actual = actual->siguiente;
+        }
     }
 
     void mostrar_contactos() {

@@ -35,7 +35,13 @@ public:
     }
 
     Nodo* buscar(string nombre) {
-        // Implementar la lógica para buscar un nodo por nombre en la lista enlazada.
+        Nodo* actual = cabeza;
+        while (actual != nullptr) {
+            if (actual->dato.nombre == nombre) {
+                return actual;
+            }
+            actual = actual->siguiente;
+        }
         return nullptr;
     }
 
