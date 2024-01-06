@@ -1,0 +1,4 @@
+ToolSet: w64 12.0 (local)@D:\apps\aunmascondenadasapps\msys64\mingw64
+Options: 
+
+Options:-DCMAKE_MAKE_PROGRAM=D:/apps/aunmascondenadasapps/CLion 2023.2.1/bin/ninja/win/x64/ninja.exe

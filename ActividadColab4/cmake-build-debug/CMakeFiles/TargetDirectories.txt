@@ -1,0 +1,3 @@
+D:/GitHubProys/ActividadColaborativa4_PEL/ActividadColab4/cmake-build-debug/CMakeFiles/ActividadColab4.dir
+D:/GitHubProys/ActividadColaborativa4_PEL/ActividadColab4/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/GitHubProys/ActividadColaborativa4_PEL/ActividadColab4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
