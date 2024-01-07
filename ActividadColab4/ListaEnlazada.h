@@ -90,5 +90,16 @@ public:
         }
         return false;
     }
+    int obtenerTamanio() const {
+        int contador = 0;
+        Nodo* actual = cabeza;
+
+        while (actual != nullptr) {
+            contador++;
+            actual = actual->siguiente;
+        }
+
+        return contador;
+    }
 };
 #endif //ACTIVIDADCOLAB4_LISTAENLAZADA_H

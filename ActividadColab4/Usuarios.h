@@ -35,7 +35,7 @@ public:
 
     Perfil(string n)  {
         nombre = n;
-        contactos = 0;
+        
     }
 
     ~Perfil() {
@@ -85,6 +85,24 @@ public:
 
             actual = actual->siguiente;
         }
+    }
+    void exportar_contactos(Perfil& perfil_destino){
+        if (perfil_destino.contactos.obtenerTamanio() > 0) {
+            cout << "El perfil de destino ya tiene contactos. Exportación cancelada." << endl;
+
+        }
+
+        // Agrega todos los contactos del perfil actual al perfil de destino
+        Nodo* actual = contactos.cabeza;
+
+        while (actual != nullptr) {
+            // No necesitas verificar si el contacto ya existe en el perfil de destino,
+            // ya que estás exportando todos los contactos sin importar si existen o no.
+            perfil_destino.agregar_contacto(actual->dato);
+            actual = actual->siguiente;
+        }
+
+        cout << "Exportación de contactos exitosa de '" << nombre << "' a '" << perfil_destino.nombre << "'." << endl;
     }
 
     void mostrar_contactos() {
