@@ -25,9 +25,13 @@ public:
     }
 
     void insertar(Contacto dato) {
-        Nodo* nuevoNodo = new Nodo(dato);
-        nuevoNodo->siguiente = cabeza;
-        cabeza = nuevoNodo;
+        if(contactoDuplicado(dato)==false) {
+            Nodo *nuevoNodo = new Nodo(dato);
+            nuevoNodo->siguiente = cabeza;
+            cabeza = nuevoNodo;
+        }else{
+            cout<<"No se puede aniadir el contacto porque ya existe"<<endl;
+        }
     }
 
     void modificar(string nombre_viejo, Contacto nuevo_dato) {
@@ -75,6 +79,16 @@ public:
             cout << "Nombre: " << actual->dato.nombre << ", Detalles: " << actual->dato.detalles << endl;
             actual = actual->siguiente;
         }
+    }
+    bool contactoDuplicado(Contacto infoContacto){
+        Nodo* indice;
+        for(indice=cabeza;indice!=NULL;indice=indice->siguiente){
+            if(infoContacto.nombre==indice->dato.nombre){
+                return true;
+            }
+
+        }
+        return false;
     }
 };
 #endif //ACTIVIDADCOLAB4_LISTAENLAZADA_H
