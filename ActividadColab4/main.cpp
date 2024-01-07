@@ -22,6 +22,10 @@ int main() {
     Contacto c13 ("Paula", "Companiera de clase");
     Contacto c14 ("Laura", "El teatro musical es su pasion");
     Contacto c15 ("Alvaro", "O un 10, o nada");
+    Contacto c16 ("Geronimo", "Baila flamenco");
+    Contacto c17 ("Glados", "Absolutamente no un robot");
+    Contacto c18 ("Gale", "Mr Dekarios para ti");
+    Contacto c19 ("Olga", "Cinturon negro de Taekwondo");
 
 
 

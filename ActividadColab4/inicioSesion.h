@@ -2,6 +2,7 @@
 // Created by jgome on 04/01/2024.
 //
 #include "iostream"
+#include "Usuarios.h"
 using namespace std;
 #ifndef ACTIVIDADCOLAB4_INICIOSESION_H
 #define ACTIVIDADCOLAB4_INICIOSESION_H
@@ -45,6 +46,8 @@ public:
         }
         else{
             cout << "BIENVENIDO"<<endl;
+            Perfil usuarioActual(us);
+
         }
 
     }
